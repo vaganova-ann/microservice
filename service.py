@@ -90,7 +90,7 @@ def create_app() -> Flask:
             current_request: dict = request.json
             user_id: str = current_request['user_id']
             data_for_model, categories_name = create_data_for_model(current_request)
-            result = model.predict_next_month_sum_distribution(data_for_model)
+            result = model.predict_next_month_item_distribution(data_for_model)
             return create_result_item_json(result, user_id, categories_name)
 
         except TypeError or KeyError:
