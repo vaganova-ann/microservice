@@ -1,0 +1,6 @@
+numpy~=1.21.2
+torch
+scikit_learn
+
+flask~=1.1.2
+scikit-learn~=1.0.1
