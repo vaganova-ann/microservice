@@ -66,7 +66,7 @@ def create_app() -> Flask:
         <p>Некое незримое существо или закон, подобно Длани Господней, парящей над миром?</p>
         <p>По крайне мере истинно то, что человек не властен даже над своей волей.</p>'''
 
-    @app.route('/predict_spent_money', methods=['GET'])
+    @app.route('/predict_spent_money', methods=['POST'])
     def predict_spent_money() -> Any:
         try:
             if not model:
@@ -81,7 +81,7 @@ def create_app() -> Flask:
         except TypeError or KeyError:
             abort(400)
 
-    @app.route('/predict_purchased_goods', methods=['GET'])
+    @app.route('/predict_purchased_goods', methods=['POST'])
     def predict_purchased_goods() -> Any:
         try:
             if not model:
